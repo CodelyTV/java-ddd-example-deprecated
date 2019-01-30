@@ -15,7 +15,7 @@ Take a look, play and have fun with it!
 ## 🚀 Environment setup
 
 1. Install Java: `brew cask install java`
-2. Clone this repository: `git clone https://github.com/CodelyTV/java-bootstrap`.
+2. Clone this repository: `git clone https://github.com/CodelyTV/cqrs-ddd-java-example`
 3. Execute some [Gradle lifecycle tasks](https://docs.gradle.org/current/userguide/java_plugin.html#lifecycle_tasks) in order to check everything is OK:
     1. Create [the project JAR](https://docs.gradle.org/current/userguide/java_plugin.html#sec:jar) and other project artifacts:
     `./gradlew assemble --warning-mode all`
