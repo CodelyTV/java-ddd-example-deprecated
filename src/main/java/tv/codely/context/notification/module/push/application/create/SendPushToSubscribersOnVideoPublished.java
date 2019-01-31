@@ -1,20 +1,20 @@
 package tv.codely.context.notification.module.push.application.create;
 
-import tv.codely.context.video.module.video.domain.VideoCreated;
+import tv.codely.context.video.module.video.domain.VideoPublished;
 import tv.codely.shared.application.DomainEventSubscriber;
 
-public class SendPushToSubscribersOnVideoCreated implements DomainEventSubscriber<VideoCreated> {
+public class SendPushToSubscribersOnVideoPublished implements DomainEventSubscriber<VideoPublished> {
     @Override
-    public String subscribedTo() {
-        return VideoCreated.NAME;
+    public Class<VideoPublished> subscribedTo() {
+        return VideoPublished.class;
     }
 
     @Override
-    public void react(VideoCreated event) {
+    public void consume(VideoPublished event) {
         System.out.println(
             String.format(
                 "Hey! There is a new video with title <%s> and description <%s>",
-                event.name(),
+                event.title(),
                 event.description()
             )
         );

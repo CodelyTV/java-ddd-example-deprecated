@@ -2,8 +2,8 @@ package tv.codely.shared.application;
 
 import tv.codely.shared.domain.DomainEvent;
 
-public interface DomainEventSubscriber<Event extends DomainEvent> {
-    String subscribedTo();
+public interface DomainEventSubscriber<EventType extends DomainEvent> {
+    Class<EventType> subscribedTo();
 
-    void react(Event event);
+    void consume(EventType event);
 }
