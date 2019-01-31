@@ -1,7 +1,7 @@
 package tv.codely;
 
 import tv.codely.context.notification.module.push.application.create.SendPushToSubscribersOnVideoPublished;
-import tv.codely.context.video.module.video.domain.VideoPublished;
+import tv.codely.context.video.module.video.application.create.VideoPublisher;
 import tv.codely.shared.application.DomainEventSubscriber;
 import tv.codely.shared.domain.EventBus;
 import tv.codely.shared.infrastructure.bus.ReactorEventBus;
@@ -13,14 +13,12 @@ public class Starter {
         final Set<DomainEventSubscriber> subscribers = Set.of(
             new SendPushToSubscribersOnVideoPublished()
         );
-
         final EventBus eventBus = new ReactorEventBus(subscribers);
+        final var videoPublisher = new VideoPublisher(eventBus);
 
-        final var videoPublished = new VideoPublished(
-            "\uD83C\uDF89 New youtube.com/CodelyTV video title",
-            "This should be the video description \uD83D\uDE42"
-        );
+        final var videoTitle = "\uD83C\uDF89 New YouTube.com/CodelyTV video title";
+        final var videoDescription = "This should be the video description \uD83D\uDE42";
 
-        eventBus.publish(videoPublished);
+        videoPublisher.publish(videoTitle, videoDescription);
     }
 }

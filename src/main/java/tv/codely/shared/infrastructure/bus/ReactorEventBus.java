@@ -7,6 +7,8 @@ import reactor.fn.Consumer;
 import tv.codely.shared.application.DomainEventSubscriber;
 import tv.codely.shared.domain.DomainEvent;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 
 import static reactor.bus.selector.Selectors.$;
@@ -21,7 +23,11 @@ public class ReactorEventBus implements tv.codely.shared.domain.EventBus {
     }
 
     @Override
-    public void publish(final DomainEvent event) {
+    public void publish(final List<DomainEvent> events) {
+        events.forEach(this::publish);
+    }
+
+    private void publish(final DomainEvent event) {
         Class<? extends DomainEvent> eventIdentifier = event.getClass();
         Event<DomainEvent> wrappedEvent = Event.wrap(event);
 
