@@ -21,6 +21,8 @@ Take a look, play and have fun with it!
     `./gradlew assemble --warning-mode all`
     2. Run the tests and plugins verification tasks:
     `./gradlew check --warning-mode all`
+    3. Execute the main application entrypoint:
+    `./gradlew run --warning-mode all`
 4. Start developing!
 
 ## 🤔 How to update dependencies
