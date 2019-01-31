@@ -13,7 +13,8 @@ public class SendPushToSubscribersOnVideoPublished implements DomainEventSubscri
     public void consume(VideoPublished event) {
         System.out.println(
             String.format(
-                "Hey! There is a new video with title <%s> and description <%s>",
+                "Hey! There is a new video with id <%s>, title <%s>, and description <%s>",
+                event.id(),
                 event.title(),
                 event.description()
             )
