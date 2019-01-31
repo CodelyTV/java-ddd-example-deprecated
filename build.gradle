@@ -6,15 +6,17 @@ targetCompatibility = 1.11
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
     // Prod
-    implementation('io.projectreactor:reactor-bus:2.0.8.RELEASE')
+    implementation 'io.projectreactor:reactor-bus:2.0.8.RELEASE'
 
     // Test
-    testCompile('org.junit.jupiter:junit-jupiter-api:5.3.2')
-    testRuntime('org.junit.jupiter:junit-jupiter-engine:5.3.2')
+    testCompile "org.mockito:mockito-core:2.+"
+    testCompile 'org.junit.jupiter:junit-jupiter-api:5.+'
+    testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.+'
 }
 
 test {
