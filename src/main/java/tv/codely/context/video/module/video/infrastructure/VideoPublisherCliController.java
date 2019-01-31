@@ -1,4 +1,4 @@
-package tv.codely;
+package tv.codely.context.video.module.video.infrastructure;
 
 import tv.codely.context.notification.module.push.application.create.SendPushToSubscribersOnVideoPublished;
 import tv.codely.context.video.module.video.application.publish.VideoPublisher;
@@ -8,7 +8,7 @@ import tv.codely.shared.infrastructure.bus.ReactorEventBus;
 
 import java.util.Set;
 
-public class Starter {
+public class VideoPublisherCliController {
     public static void main(String[] args) {
         final Set<DomainEventSubscriber> subscribers = Set.of(
             new SendPushToSubscribersOnVideoPublished()

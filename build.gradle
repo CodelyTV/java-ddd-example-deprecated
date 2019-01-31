@@ -30,5 +30,5 @@ test {
 }
 
 application {
-    mainClassName = "tv.codely.Starter"
+    mainClassName = "tv.codely.context.video.module.video.infrastructure.VideoPublisherCliController"
 }
