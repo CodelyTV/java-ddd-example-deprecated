@@ -12,6 +12,8 @@ repositories {
 dependencies {
     // Prod
     implementation 'io.projectreactor:reactor-bus:2.0.8.RELEASE'
+    implementation 'org.apache.logging.log4j:log4j-core:2.11.1'
+    implementation 'com.vlkan.log4j2:log4j2-logstash-layout:0.15'
 
     // Test
     testCompile "org.mockito:mockito-core:2.+"

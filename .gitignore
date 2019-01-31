@@ -1,3 +1,6 @@
+# Application
+/logs/*
+
 # Gradle
 .gradle
 build/
