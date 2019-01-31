@@ -1,7 +1,7 @@
 package tv.codely;
 
 import tv.codely.context.notification.module.push.application.create.SendPushToSubscribersOnVideoPublished;
-import tv.codely.context.video.module.video.application.create.VideoPublisher;
+import tv.codely.context.video.module.video.application.publish.VideoPublisher;
 import tv.codely.shared.application.DomainEventSubscriber;
 import tv.codely.shared.domain.EventBus;
 import tv.codely.shared.infrastructure.bus.ReactorEventBus;

@@ -1,4 +1,4 @@
-package tv.codely.context.video.module.video.application.create;
+package tv.codely.context.video.module.video.application.publish;
 
 import tv.codely.context.video.module.video.domain.Video;
 import tv.codely.shared.domain.EventBus;
