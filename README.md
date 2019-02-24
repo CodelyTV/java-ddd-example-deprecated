@@ -6,7 +6,7 @@
 > You can do awesome stuff with Java 🙂
 
 [![CodelyTV](https://img.shields.io/badge/codely-tv-green.svg?style=flat-square)](https://codely.tv)
-[![Build Status](https://travis-ci.com/CodelyTV/cqrs-ddd-java-example.svg?branch=master)](https://travis-ci.com/CodelyTV/cqrs-ddd-java-example)
+[![Build Status](https://travis-ci.org/CodelyTV/cqrs-ddd-java-example.svg?branch=master)](https://travis-ci.org/CodelyTV/cqrs-ddd-java-example)
 
 Implementation example of a Java application following Domain-Driven Design (DDD) and Command Query Responsibility Segregation (CQRS) principles, keeping the code as simple as possible.
 

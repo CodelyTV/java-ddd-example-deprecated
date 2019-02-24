@@ -1,0 +1,6 @@
+rootProject.name = 'cqrs-ddd-java-example'
+
+include 'applications'
+include 'src:backoffice'
+include 'src:mooc'
+include 'src:shared'

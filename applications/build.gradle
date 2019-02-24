@@ -1,0 +1,9 @@
+apply plugin: 'application'
+
+mainClassName = 'tv.codely.Starter'
+
+dependencies {
+    compile project(":src:backoffice")
+    compile project(":src:mooc")
+}
+
