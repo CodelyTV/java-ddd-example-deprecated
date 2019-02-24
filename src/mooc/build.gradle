@@ -1,12 +1,3 @@
-apply plugin: 'application'
-
-application {
-    mainClassName = "tv.codely.context.video.module.video.infrastructure.VideoPublisherCliController"
-}
-
 dependencies {
-}
-
-run.doFirst {
-    // Environment variables go here.
+    compile project(":src:shared")
 }

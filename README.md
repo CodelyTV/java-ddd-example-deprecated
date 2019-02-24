@@ -1,3 +1,7 @@
+# TODO
+* `./gradlew :app:run --warning-mode all`
+
+
 # ☕🎯 Hexagonal Architecture + DDD + CQRS Java example with SpringBoot
 
 <img src="http://codely.tv/wp-content/uploads/2016/05/cropped-logo-codelyTV.png" align="left" width="192px" height="192px"/>
