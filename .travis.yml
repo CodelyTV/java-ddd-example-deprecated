@@ -25,3 +25,5 @@ install: true
 script:
   - ./gradlew assemble --warning-mode all
   - ./gradlew check --warning-mode all
+  # Checks the application is running ok
+  - ./gradlew :app:run --warning-mode all
