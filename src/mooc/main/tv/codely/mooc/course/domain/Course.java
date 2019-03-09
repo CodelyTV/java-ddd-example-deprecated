@@ -2,17 +2,15 @@ package tv.codely.mooc.course.domain;
 
 import tv.codely.shared.domain.AggregateRoot;
 
-import java.util.List;
-
 final public class Course extends AggregateRoot {
     private final CourseId     id;
     private final CourseName   name;
-    private final List<Review> reviews;
+    private final CourseRating rating;
 
-    public Course(CourseId id, CourseName name, List<Review> reviews) {
-        this.id      = id;
-        this.name    = name;
-        this.reviews = reviews;
+    public Course(CourseId id, CourseName name, CourseRating rating) {
+        this.id     = id;
+        this.name   = name;
+        this.rating = rating;
     }
 
     public CourseId id() {
@@ -23,7 +21,7 @@ final public class Course extends AggregateRoot {
         return name;
     }
 
-    public List<Review> reviews() {
-        return reviews;
+    public CourseRating rating() {
+        return rating;
     }
 }
