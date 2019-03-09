@@ -1,0 +1,26 @@
+version: '3.3'
+
+services:
+  elasticsearch:
+    container_name: codelytv-cqrs_ddd_java_example-elasticsearch
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.2
+    ports: ['9240:9200']
+    volumes:
+      - './etc/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro'
+      - './var/elasticsearch:/usr/share/elasticsearch/data'
+
+  logstash:
+    container_name: codelytv-cqrs_ddd_java_example-logstash
+    image: docker.elastic.co/logstash/logstash:6.4.2
+    ports: ['9640:9600']
+    depends_on: ['elasticsearch']
+    volumes:
+      - './etc/logstash/pipeline:/usr/share/logstash/pipeline'
+      - './var/logs:/logs'
+
+  kibana:
+    container_name: codelytv-cqrs_ddd_java_example-kibana
+    image: docker.elastic.co/kibana/kibana:6.4.2
+    ports: ['5641:5601']
+    depends_on:
+      - 'elasticsearch'

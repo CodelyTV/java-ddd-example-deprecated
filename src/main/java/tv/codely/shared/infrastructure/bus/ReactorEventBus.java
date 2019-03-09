@@ -29,7 +29,7 @@ public class ReactorEventBus implements tv.codely.shared.domain.EventBus {
 
     private void publish(final DomainEvent event) {
         Class<? extends DomainEvent> eventIdentifier = event.getClass();
-        Event<DomainEvent> wrappedEvent = Event.wrap(event);
+        Event<? extends DomainEvent> wrappedEvent = Event.wrap(event);
 
         bus.notify(eventIdentifier, wrappedEvent);
     }
@@ -40,9 +40,10 @@ public class ReactorEventBus implements tv.codely.shared.domain.EventBus {
         bus.on(eventIdentifier, eventConsumer(subscriber));
     }
 
-    private Consumer<Event> eventConsumer(final DomainEventSubscriber subscriber) {
-        return (Event reactorEvent) -> {
-            DomainEvent unwrappedEvent = (DomainEvent) reactorEvent.getData();
+    private Consumer<Event<? extends DomainEvent>> eventConsumer(final DomainEventSubscriber subscriber) {
+        return (Event<? extends DomainEvent> reactorEvent) -> {
+            DomainEvent unwrappedEvent = reactorEvent.getData();
+
             subscriber.consume(unwrappedEvent);
         };
     }

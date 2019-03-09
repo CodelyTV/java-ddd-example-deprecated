@@ -1,0 +1,7 @@
+{"@version":1,"source_host":"Somachigun","message":"Hello error world!","thread_name":"main","@timestamp":"2019-02-08T08:05:36.217+01:00","level":"ERROR","logger_name":"tv.codely.context.video.module.video.infrastructure.VideoPublisherCliController"}
+{"@version":1,"source_host":"Somachigun","message":"Hello error world!","thread_name":"main","@timestamp":"2019-02-08T08:08:18.999+01:00","level":"ERROR","logger_name":"tv.codely.video"}
+{"@version":1,"source_host":"Somachigun","message":"Hello error world!","thread_name":"main","@timestamp":"2019-02-08T08:12:38.179+01:00","level":"ERROR","logger_name":"tv.codely.video"}
+{"@version":1,"source_host":"Somachigun","message":"Hello error world!","thread_name":"main","@timestamp":"2019-02-08T08:21:11.249+01:00","level":"ERROR","logger_name":"tv.codely.video"}
+{"@version":1,"source_host":"Somachigun","message":"Hello error world!","thread_name":"main","@timestamp":"2019-02-08T08:21:59.724+01:00","level":"ERROR","logger_name":"tv.codely.video"}
+{"@version":1,"source_host":"Somachigun","message":"Hello error world!","thread_name":"main","@timestamp":"2019-02-08T08:37:00.351+01:00","level":"ERROR","logger_name":"tv.codely.video"}
+{"@version":1,"source_host":"Somachigun","message":"Hello error world!","thread_name":"main","@timestamp":"2019-02-08T08:37:45.102+01:00","level":"ERROR","logger_name":"tv.codely.video"}

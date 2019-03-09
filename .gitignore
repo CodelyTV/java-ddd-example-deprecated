@@ -1,11 +1,15 @@
 # Application
-/logs/*
+
+
+
+# Infrastructure
+
+/var/elasticsearch/nodes/*
 
 # Gradle
+
 .gradle
 build/
 out/
-
-# Ignore Gradle GUI config
 gradle-app.setting
 
