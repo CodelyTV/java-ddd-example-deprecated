@@ -1,4 +1,4 @@
-package tv.codely.mooc.course.domain;
+package tv.codely.shared.domain.courses;
 
 import tv.codely.shared.domain.Identifier;
 

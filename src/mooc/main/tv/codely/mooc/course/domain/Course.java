@@ -1,6 +1,7 @@
 package tv.codely.mooc.course.domain;
 
 import tv.codely.shared.domain.AggregateRoot;
+import tv.codely.shared.domain.courses.CourseId;
 
 final public class Course extends AggregateRoot {
     private final CourseId     id;
