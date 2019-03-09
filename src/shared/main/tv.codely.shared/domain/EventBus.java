@@ -1,4 +1,4 @@
-package tv.codely.mooc.shared.domain;
+package tv.codely.shared.domain;
 
 import java.util.List;
 

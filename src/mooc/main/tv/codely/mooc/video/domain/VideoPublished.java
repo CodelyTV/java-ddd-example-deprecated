@@ -1,6 +1,6 @@
-package tv.codely.mooc.video.module.video.domain;
+package tv.codely.mooc.video.domain;
 
-import tv.codely.mooc.shared.domain.DomainEvent;
+import tv.codely.shared.domain.DomainEvent;
 
 public final class VideoPublished implements DomainEvent {
     private static final String FULL_QUALIFIED_EVENT_NAME = "codelytv.video.video.event.1.video.published";

@@ -1,18 +1,18 @@
-package tv.codely.mooc.shared.infrastructure.bus;
+package tv.codely.shared.infrastructure.bus;
 
 import reactor.bus.Event;
 import reactor.bus.EventBus;
 import reactor.bus.selector.Selector;
 import reactor.fn.Consumer;
-import tv.codely.mooc.shared.domain.DomainEvent;
-import tv.codely.mooc.shared.application.DomainEventSubscriber;
+import tv.codely.shared.domain.DomainEvent;
+import tv.codely.shared.application.DomainEventSubscriber;
 
 import java.util.List;
 import java.util.Set;
 
 import static reactor.bus.selector.Selectors.$;
 
-public class ReactorEventBus implements tv.codely.mooc.shared.domain.EventBus {
+public class ReactorEventBus implements tv.codely.shared.domain.EventBus {
     private final EventBus bus;
 
     public ReactorEventBus(final Set<DomainEventSubscriber> subscribers) {

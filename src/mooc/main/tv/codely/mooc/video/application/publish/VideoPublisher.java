@@ -1,9 +1,9 @@
-package tv.codely.mooc.video.module.video.application.publish;
+package tv.codely.mooc.video.application.publish;
 
-import tv.codely.mooc.video.module.video.domain.Video;
-import tv.codely.mooc.video.module.video.domain.VideoDescription;
-import tv.codely.mooc.video.module.video.domain.VideoTitle;
-import tv.codely.mooc.shared.domain.EventBus;
+import tv.codely.mooc.video.domain.Video;
+import tv.codely.mooc.video.domain.VideoDescription;
+import tv.codely.mooc.video.domain.VideoTitle;
+import tv.codely.shared.domain.EventBus;
 
 public final class VideoPublisher {
     private final EventBus eventBus;

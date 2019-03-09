@@ -1,6 +1,6 @@
-package tv.codely.mooc.video.module.video.domain;
+package tv.codely.mooc.video.domain;
 
-import tv.codely.mooc.shared.domain.AggregateRoot;
+import tv.codely.shared.domain.AggregateRoot;
 
 public final class Video extends AggregateRoot {
     private final VideoTitle title;
