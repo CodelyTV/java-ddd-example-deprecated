@@ -1,7 +1,7 @@
-package tv.codely.mooc.notification.module.push.application.create;
+package tv.codely.mooc.notification.application.create;
 
-import tv.codely.mooc.video.module.video.domain.VideoPublished;
-import tv.codely.mooc.shared.application.DomainEventSubscriber;
+import tv.codely.mooc.video.domain.VideoPublished;
+import tv.codely.shared.application.DomainEventSubscriber;
 
 public class SendPushToSubscribersOnVideoPublished implements DomainEventSubscriber<VideoPublished> {
     @Override

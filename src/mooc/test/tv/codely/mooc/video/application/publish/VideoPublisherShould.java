@@ -1,9 +1,8 @@
 package tv.codely.mooc.video.application.publish;
 
 import org.junit.jupiter.api.Test;
-import tv.codely.mooc.video.module.video.application.publish.VideoPublisher;
-import tv.codely.mooc.video.module.video.domain.VideoPublished;
-import tv.codely.mooc.shared.domain.EventBus;
+import tv.codely.mooc.video.domain.VideoPublished;
+import tv.codely.shared.domain.EventBus;
 
 import java.util.List;
 

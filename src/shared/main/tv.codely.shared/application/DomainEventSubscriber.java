@@ -1,6 +1,6 @@
-package tv.codely.mooc.shared.application;
+package tv.codely.shared.application;
 
-import tv.codely.mooc.shared.domain.DomainEvent;
+import tv.codely.shared.domain.DomainEvent;
 
 public interface DomainEventSubscriber<EventType extends DomainEvent> {
     Class<EventType> subscribedTo();

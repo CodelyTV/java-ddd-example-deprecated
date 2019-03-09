@@ -1,10 +1,10 @@
-package tv.codely.mooc.video.module.video.infrastructure;
+package tv.codely.mooc.video.infrastructure;
 
-import tv.codely.mooc.notification.module.push.application.create.SendPushToSubscribersOnVideoPublished;
-import tv.codely.mooc.video.module.video.application.publish.VideoPublisher;
-import tv.codely.mooc.shared.application.DomainEventSubscriber;
-import tv.codely.mooc.shared.domain.EventBus;
-import tv.codely.mooc.shared.infrastructure.bus.ReactorEventBus;
+import tv.codely.mooc.notification.application.create.SendPushToSubscribersOnVideoPublished;
+import tv.codely.mooc.video.application.publish.VideoPublisher;
+import tv.codely.shared.application.DomainEventSubscriber;
+import tv.codely.shared.domain.EventBus;
+import tv.codely.shared.infrastructure.bus.ReactorEventBus;
 
 import java.util.Set;
 

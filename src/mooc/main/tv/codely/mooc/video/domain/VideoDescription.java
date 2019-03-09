@@ -1,9 +1,9 @@
-package tv.codely.mooc.video.module.video.domain;
+package tv.codely.mooc.video.domain;
 
-public final class VideoTitle {
+public final class VideoDescription {
     private final String value;
 
-    public VideoTitle(String value) {
+    public VideoDescription(final String value) {
         this.value = value;
     }
 
@@ -16,7 +16,7 @@ public final class VideoTitle {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        VideoTitle that = (VideoTitle) o;
+        VideoDescription that = (VideoDescription) o;
 
         return value.equals(that.value);
     }
