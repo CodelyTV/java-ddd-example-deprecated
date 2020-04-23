@@ -1,8 +1,8 @@
 package tv.codely.mooc.log;
 
 import tv.codely.mooc.log.domain.LogAction;
+import tv.codely.mooc.log.domain.LogVideo;
 import tv.codely.mooc.log.domain.VideoLogger;
-import tv.codely.mooc.video.domain.Video;
 
 import static org.mockito.ArgumentMatchers.refEq;
 import static org.mockito.Mockito.mock;
@@ -19,7 +19,7 @@ public abstract class LogModuleUnitTest {
         return logger;
     }
 
-    protected void shouldLog(Video video, LogAction logAction) {
+    protected void shouldLog(LogVideo video, LogAction logAction) {
         verify(logger()).log(refEq(video), refEq(logAction));
     }
 }

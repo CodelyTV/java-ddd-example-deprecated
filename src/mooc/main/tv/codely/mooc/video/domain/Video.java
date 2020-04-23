@@ -11,10 +11,6 @@ public final class Video extends AggregateRoot {
         this.description = description;
     }
 
-    public static Video build(VideoTitle title, VideoDescription description){
-        return new Video(title, description);
-    }
-
     public static Video publish(VideoTitle title, VideoDescription description) {
         var video = new Video(title, description);
 
@@ -23,13 +19,5 @@ public final class Video extends AggregateRoot {
         video.record(videoCreated);
 
         return video;
-    }
-
-    public VideoTitle title() {
-        return title;
-    }
-
-    public VideoDescription description() {
-        return description;
     }
 }
