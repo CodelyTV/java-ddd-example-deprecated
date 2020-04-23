@@ -1,3 +1,5 @@
 dependencies {
     compile project(":src:shared")
+    testCompile project(':src:shared').sourceSets.test.output
+    testCompile 'com.github.javafaker:javafaker:1.0.2'
 }
