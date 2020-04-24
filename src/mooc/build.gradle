@@ -2,4 +2,13 @@ dependencies {
     compile project(":src:shared")
     testCompile project(':src:shared').sourceSets.test.output
     testCompile 'com.github.javafaker:javafaker:1.0.2'
+    testImplementation 'org.assertj:assertj-core:3.15.0'
+    testCompile group: 'commons-io', name: 'commons-io', version: '2.6'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.13.1'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.1'
+    implementation 'org.apache.logging.log4j:log4j-slf4j-impl:2.13.1'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.10.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.3'
+    implementation 'com.vlkan.log4j2:log4j2-logstash-layout:1.0.2'
+
 }

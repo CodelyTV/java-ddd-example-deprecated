@@ -7,7 +7,6 @@ public class VideoPublishedLogger {
     private final VideoLogger logger;
 
     public VideoPublishedLogger(VideoLogger logger) {
-
         this.logger = logger;
     }
 

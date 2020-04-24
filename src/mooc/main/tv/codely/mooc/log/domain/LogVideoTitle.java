@@ -1,10 +1,14 @@
 package tv.codely.mooc.log.domain;
 
 public class LogVideoTitle {
-    private final String title;
+    private final String value;
 
-    public LogVideoTitle(String title) {
+    public LogVideoTitle(String value) {
 
-        this.title = title;
+        this.value = value;
+    }
+
+    public String value() {
+        return value;
     }
 }
