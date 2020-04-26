@@ -1,5 +1,6 @@
 package tv.codely.mooc.video.domain;
 
+import tv.codely.mooc.log.domain.LogAction;
 import tv.codely.shared.domain.AggregateRoot;
 
 public final class Video extends AggregateRoot {
@@ -19,5 +20,17 @@ public final class Video extends AggregateRoot {
         video.record(videoCreated);
 
         return video;
+    }
+
+    public static Video build(VideoTitle title, VideoDescription description){
+        return new Video(title, description);
+    }
+
+    public VideoTitle title() {
+        return title;
+    }
+
+    public VideoDescription description() {
+        return description;
     }
 }

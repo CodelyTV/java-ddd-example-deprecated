@@ -1,5 +1,7 @@
 package tv.codely.mooc.log.domain;
 
+import tv.codely.mooc.video.domain.Video;
+
 public class LogVideoMother {
 
     public static LogVideo random() {
@@ -8,4 +10,10 @@ public class LogVideoMother {
         return new LogVideo(title, description);
     }
 
+    public static LogVideo createFrom(Video video) {
+        return new LogVideo(
+                new LogVideoTitle(video.title().value()),
+                new LogVideoDescription(video.description().value())
+        );
+    }
 }

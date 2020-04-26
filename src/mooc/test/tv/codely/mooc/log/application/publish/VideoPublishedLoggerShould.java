@@ -2,11 +2,11 @@ package tv.codely.mooc.log.application.publish;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import tv.codely.mooc.log.LogModuleUnitTest;
+import tv.codely.mooc.log.VideoLoggerUnitTest;
 import tv.codely.mooc.log.domain.LogAction;
 import tv.codely.mooc.log.domain.LogVideoMother;
 
-class VideoPublishedLoggerShould extends LogModuleUnitTest {
+class VideoPublishedLoggerShould extends VideoLoggerUnitTest {
 
     private VideoPublishedLogger videoPublishedLogger;
 

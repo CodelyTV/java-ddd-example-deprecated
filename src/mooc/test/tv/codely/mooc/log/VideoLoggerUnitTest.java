@@ -1,14 +1,16 @@
 package tv.codely.mooc.log;
 
+import org.mockito.ArgumentCaptor;
 import tv.codely.mooc.log.domain.LogAction;
 import tv.codely.mooc.log.domain.LogVideo;
 import tv.codely.mooc.log.domain.VideoLogger;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.refEq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-public abstract class LogModuleUnitTest {
+public abstract class VideoLoggerUnitTest {
 
     private VideoLogger logger;
 
@@ -20,6 +22,9 @@ public abstract class LogModuleUnitTest {
     }
 
     protected void shouldLog(LogVideo video, LogAction logAction) {
-        verify(logger()).log(refEq(video), refEq(logAction));
+        ArgumentCaptor<LogVideo> videoCaptor = ArgumentCaptor.forClass(LogVideo.class);
+        verify(logger()).log(videoCaptor.capture(), refEq(logAction));
+        assertThat(videoCaptor.getValue()).usingRecursiveComparison()
+                .isEqualTo(video);
     }
 }

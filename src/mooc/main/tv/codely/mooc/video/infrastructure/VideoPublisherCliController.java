@@ -1,5 +1,8 @@
 package tv.codely.mooc.video.infrastructure;
 
+import tv.codely.mooc.log.application.publish.LogVideoPublishedOnVideoPublished;
+import tv.codely.mooc.log.application.publish.VideoPublishedLogger;
+import tv.codely.mooc.log.infrastructure.FileVideoLogger;
 import tv.codely.mooc.notification.application.create.SendPushToSubscribersOnVideoPublished;
 import tv.codely.mooc.video.application.publish.VideoPublisher;
 import tv.codely.shared.application.DomainEventSubscriber;
@@ -11,7 +14,8 @@ import java.util.Set;
 public class VideoPublisherCliController {
     public static void main(String[] args) {
         final Set<DomainEventSubscriber> subscribers = Set.of(
-            new SendPushToSubscribersOnVideoPublished()
+                new SendPushToSubscribersOnVideoPublished(),
+                new LogVideoPublishedOnVideoPublished(new VideoPublishedLogger(new FileVideoLogger()))
         );
         final EventBus eventBus = new ReactorEventBus(subscribers);
         final var videoPublisher = new VideoPublisher(eventBus);
