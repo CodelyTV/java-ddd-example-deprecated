@@ -4,13 +4,16 @@ import org.mockito.ArgumentCaptor;
 import tv.codely.mooc.log.domain.LogAction;
 import tv.codely.mooc.log.domain.LogVideo;
 import tv.codely.mooc.log.domain.VideoLogger;
+import tv.codely.shared.application.DomainEventSubscriber;
+import tv.codely.shared.domain.DomainEvent;
+import tv.codely.shared.infrastructure.UnitTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.refEq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-public abstract class VideoLoggerUnitTest {
+public abstract class VideoLoggerUnitTest extends UnitTest {
 
     private VideoLogger logger;
 

@@ -22,7 +22,7 @@ class LogVideoPublishedOnVideoPublishedShould extends VideoLoggerUnitTest {
         final var video = VideoMother.random();
         final var videoPublishedEvent = new VideoPublished(video.title().value(), video.description().value());
 
-        logVideoPublishedOnVideoPublished.consume(videoPublishedEvent);
+        notify(videoPublishedEvent, logVideoPublishedOnVideoPublished);
 
         final var logVideo = LogVideoMother.createFrom(video);
         final var logAction = new LogAction("published");

@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="warn">
     <Appenders>
-        <Console name="CONSOLE" target="SYSTEM_OUT">
-            <JsonLayout compact="false"
-                        objectMessageAsJsonObject="true"
-            />
-        </Console>
         <File name="LogToFile" fileName="logs/app.log">
             <JsonLayout compact="false"
                         objectMessageAsJsonObject="true"
@@ -16,8 +11,5 @@
         <Logger name="tv.codely.mooc.log.infrastructure.FileVideoLogger" level="info" additivity="false">
             <AppenderRef ref="LogToFile"/>
         </Logger>
-        <Root level="error">
-            <AppenderRef ref="CONSOLE"/>
-        </Root>
     </Loggers>
 </Configuration>
