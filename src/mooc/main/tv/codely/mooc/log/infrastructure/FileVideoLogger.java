@@ -1,7 +1,5 @@
 package tv.codely.mooc.log.infrastructure;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
-import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,7 +17,6 @@ public class FileVideoLogger implements VideoLogger {
     public void log(LogVideo video, LogAction action) {
         final var fileLogVideo = FileLogVideo.create(video, action);
         ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.setVisibility(PropertyAccessor.FIELD, Visibility.ANY);
         logger.info(new ObjectMessage(objectMapper.convertValue(fileLogVideo, Map.class)));
     }
 }

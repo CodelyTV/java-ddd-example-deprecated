@@ -13,7 +13,7 @@
         </File>
     </Appenders>
     <Loggers>
-        <Logger name="tv.codely.mooc.log.infrastructure" level="info" additivity="false">
+        <Logger name="tv.codely.mooc.log.infrastructure.FileVideoLogger" level="info" additivity="false">
             <AppenderRef ref="LogToFile"/>
         </Logger>
         <Root level="error">

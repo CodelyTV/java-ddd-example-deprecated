@@ -3,39 +3,40 @@ package tv.codely.mooc.log.infrastructure;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.core.Logger;
-import org.apache.logging.log4j.core.LoggerContext;
-import org.apache.logging.log4j.core.appender.FileAppender;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import tv.codely.mooc.log.domain.*;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Paths;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class FileVideoLoggerTestShould {
+class FileVideoLoggerTestShould extends FileLogInfrastructureTest {
 
+    private static final String LOG_FILE = "logs/app.log";
     private VideoLogger fileVideoLogger;
 
-    @BeforeEach
-    void setUp() throws IOException {
+    @BeforeAll
+    static void clean() throws IOException {
+        final var logs = new File(LOG_FILE);
+        if (!logs.exists()) {
+            return;
+        }
+        FileUtils.forceDelete(logs);
+    }
 
+    @BeforeEach
+    void setUp() {
         fileVideoLogger = new FileVideoLogger();
     }
 
     @AfterEach
     void tearDown() throws IOException {
-        final LoggerContext ctx = (LoggerContext) LogManager.getContext(false);
-        Logger logger = ctx.getLogger("tv.codely.mooc.log.infrastructure");
-        final FileAppender logToFile = (FileAppender) logger.getAppenders().get("LogToFile");
-        logToFile.stop();
-        FileUtils.forceDelete(new File("logs"));
+        cleanAndReconfigureLogging(fileVideoLogger.getClass(), new File(LOG_FILE));
     }
 
     @Test
@@ -45,15 +46,17 @@ class FileVideoLoggerTestShould {
 
         fileVideoLogger.log(logVideo, publishedLogAction);
 
+        FileLogVideo expectedFileLogVideo = FileLogVideo.create(logVideo, publishedLogAction);
+        assertThat(getFileLogVideoFromLog()).usingRecursiveComparison()
+                .isEqualTo(expectedFileLogVideo);
+    }
+
+    private FileLogVideo getFileLogVideoFromLog() throws IOException {
         var mapper = new ObjectMapper();
-        Map<String, ?> log = mapper.readValue(Paths.get("logs/app.log").toFile(), new TypeReference<>() {
+        Map<String, ?> log = mapper.readValue(new File(LOG_FILE), new TypeReference<>() {
         });
         mapper.addMixIn(FileLogVideo.class, FileLogVideoMixin.class);
         mapper.addMixIn(LoggedVideo.class, LoggedVideoMixin.class);
-        var actualFileLogVideo = mapper.convertValue(log.get("message"), FileLogVideo.class);
-
-        FileLogVideo expectedFileLogVideo = FileLogVideo.create(logVideo, publishedLogAction);
-        assertThat(expectedFileLogVideo).usingRecursiveComparison()
-                .isEqualTo(actualFileLogVideo);
+        return mapper.convertValue(log.get("message"), FileLogVideo.class);
     }
 }

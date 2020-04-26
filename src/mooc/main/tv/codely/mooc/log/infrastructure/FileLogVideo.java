@@ -18,4 +18,12 @@ public class FileLogVideo {
                 VideoAction.finalValueOf(logAction.value())
         );
     }
+
+    public LoggedVideo getVideo() {
+        return video;
+    }
+
+    public String getAction() {
+        return action;
+    }
 }
