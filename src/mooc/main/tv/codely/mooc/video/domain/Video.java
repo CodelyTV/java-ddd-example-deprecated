@@ -20,4 +20,14 @@ public final class Video extends AggregateRoot {
 
         return video;
     }
+
+    public static Video updateDescription(VideoTitle title, VideoDescription description) {
+        var video = new Video(title, description);
+
+        var videoDescriptionUpdated = new VideoDescriptionUpdated(title.value(), description.value());
+
+        video.record(videoDescriptionUpdated);
+
+        return video;
+    }
 }
