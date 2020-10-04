@@ -20,4 +20,16 @@ public final class Video extends AggregateRoot {
 
         return video;
     }
+
+    public static Video create(VideoTitle title, VideoDescription description) {
+        return new Video(title, description);
+    }
+
+    public VideoTitle getTitle() {
+        return title;
+    }
+
+    public VideoDescription getDescription() {
+        return description;
+    }
 }

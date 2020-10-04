@@ -1,12 +1,15 @@
 package tv.codely.mooc.video.domain;
 
-public final class VideoTitle {
+import tv.codely.shared.domain.Identity;
+
+public final class VideoTitle implements Identity<String> {
     private final String value;
 
     public VideoTitle(String value) {
         this.value = value;
     }
 
+    @Override
     public String value() {
         return value;
     }
