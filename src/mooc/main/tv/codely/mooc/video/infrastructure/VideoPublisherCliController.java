@@ -2,6 +2,8 @@ package tv.codely.mooc.video.infrastructure;
 
 import tv.codely.mooc.notification.application.create.SendPushToSubscribersOnVideoPublished;
 import tv.codely.mooc.video.application.publish.VideoPublisher;
+
+import tv.codely.mooc.video.domain.ExternalAPI;
 import tv.codely.shared.application.DomainEventSubscriber;
 import tv.codely.shared.domain.EventBus;
 import tv.codely.shared.infrastructure.bus.ReactorEventBus;
@@ -14,7 +16,8 @@ public class VideoPublisherCliController {
             new SendPushToSubscribersOnVideoPublished()
         );
         final EventBus eventBus = new ReactorEventBus(subscribers);
-        final var videoPublisher = new VideoPublisher(eventBus);
+        final ExternalAPI slackAPI = new SlackAPI();
+        final var videoPublisher = new VideoPublisher(eventBus, slackAPI);
 
         final var videoTitle = "\uD83C\uDF89 New YouTube.com/CodelyTV video title";
         final var videoDescription = "This should be the video description \uD83D\uDE42";
