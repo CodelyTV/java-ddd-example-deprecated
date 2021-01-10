@@ -1,3 +1,11 @@
 dependencies {
     compile project(":src:shared")
+
+    compileOnly 'org.projectlombok:lombok:1.18.16'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.16'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
+
+    compile 'org.twitter4j:twitter4j-stream:4.0.6'
 }
