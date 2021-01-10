@@ -26,11 +26,15 @@ public class Twitter4JPublisher implements TwitterPublisher {
     }
 
     @Override
-    public void tweet(String text) {
+    public void tweet(String text) throws tv.codely.mooc.notification.domain.TwitterException {
+        tweet(text, getTwitterInstance());
+    }
+
+    private void tweet(String text, Twitter twitterInstance) throws tv.codely.mooc.notification.domain.TwitterException {
         try {
-            getTwitterInstance().updateStatus(text);
+            twitterInstance.updateStatus(text);
         } catch (TwitterException e) {
-            //TODO: To implement how to deal with these kind of errors.
+            throw new tv.codely.mooc.notification.domain.TwitterException("Error updating status " + text, e);
         }
     }
 }

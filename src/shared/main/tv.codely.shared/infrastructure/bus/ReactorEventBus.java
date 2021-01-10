@@ -21,6 +21,10 @@ public class ReactorEventBus implements tv.codely.shared.domain.EventBus {
         subscribers.forEach(this::registerOnEventBus);
     }
 
+    public void addSubscriber (DomainEventSubscriber subscriber) {
+        registerOnEventBus(subscriber);
+    }
+
     @Override
     public void publish(final List<DomainEvent> events) {
         events.forEach(this::publish);
