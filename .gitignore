@@ -6,3 +6,6 @@ out/
 # Ignore Gradle GUI config
 gradle-app.setting
 
+# IntelliJ .idea folder
+.idea/
+
