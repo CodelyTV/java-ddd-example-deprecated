@@ -1,15 +1,15 @@
 package tv.codely.mooc.twitter.application;
 
-public final class TwiterRequest {
+public final class TwitterRequest {
     private String id;
     private String text;
 
-    public TwiterRequest(String id, String text) {
+    public TwitterRequest(String id, String text) {
         this.id = id;
         this.text = text;
     }
 
-    public TwiterRequest(String text) {
+    public TwitterRequest(String text) {
         this.text = text;
     }
 

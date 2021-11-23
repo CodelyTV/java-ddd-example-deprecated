@@ -1,6 +1,6 @@
 package tv.codely.mooc.twitter.infrastructure;
 
-import tv.codely.mooc.twitter.application.TwiterRequest;
+import tv.codely.mooc.twitter.application.TwitterRequest;
 import tv.codely.mooc.twitter.domain.TwitterRepository;
 
 /**
@@ -9,7 +9,7 @@ import tv.codely.mooc.twitter.domain.TwitterRepository;
 public final class Twitter implements TwitterRepository {
 
     @Override
-    public void create(TwiterRequest twit) {
+    public void create(TwitterRequest twit) {
         System.out.println(twit.getText());
     }
 }
