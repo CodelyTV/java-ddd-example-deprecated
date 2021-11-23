@@ -1,5 +1,7 @@
 package tv.codely.mooc.twitter.domain;
 
+import tv.codely.mooc.twitter.application.TwiterRequest;
+
 public interface TwitterRepository {
-    void create(String text);
+    void create(TwiterRequest twit);
 }

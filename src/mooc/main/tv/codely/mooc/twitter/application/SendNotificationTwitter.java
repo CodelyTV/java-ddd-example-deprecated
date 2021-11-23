@@ -19,6 +19,9 @@ public final class SendNotificationTwitter implements DomainEventSubscriber<Vide
 
     @Override
     public void consume(VideoPublished event) {
-        twitterAPI.create(String.format("Hey! A new video is published: <%s>", event.title()));
+        TwiterRequest twit = new TwiterRequest(
+                String.format("Hey! A new video is published: <%s>", event.title())
+        );
+        twitterAPI.create(twit);
     }
 }
