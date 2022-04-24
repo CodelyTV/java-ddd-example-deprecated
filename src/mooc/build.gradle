@@ -1,3 +1,4 @@
 dependencies {
+    implementation 'org.projectlombok:lombok:1.18.20'
     compile project(":src:shared")
 }

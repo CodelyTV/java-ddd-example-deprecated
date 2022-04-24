@@ -1,5 +1,10 @@
 package tv.codely.mooc.video.domain;
 
+import lombok.Builder;
+import lombok.Data;
+
+@Builder
+@Data
 public final class VideoTitle {
     private final String value;
 
