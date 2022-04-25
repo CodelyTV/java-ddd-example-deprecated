@@ -1,4 +1,20 @@
+ext {
+    mapstructVersion = "1.5.0.RC1"
+}
+
 dependencies {
     implementation 'org.projectlombok:lombok:1.18.20'
+    implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+    implementation 'org.apache.logging.log4j:log4j-api:2.17.2'
+    implementation 'org.apache.logging.log4j:log4j-core:2.17.2'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.2.2'
     compile project(":src:shared")
+}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs = [
+            '-Amapstruct.suppressGeneratorTimestamp=true',
+            '-Amapstruct.suppressGeneratorVersionInfoComment=true',
+            '-Amapstruct.unmappedTargetPolicy=ERROR'
+    ]
 }
