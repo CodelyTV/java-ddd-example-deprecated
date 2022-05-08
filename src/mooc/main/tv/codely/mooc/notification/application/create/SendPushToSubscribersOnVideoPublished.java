@@ -14,8 +14,8 @@ public class SendPushToSubscribersOnVideoPublished implements DomainEventSubscri
         System.out.println(
             String.format(
                 "Hey! There is a new video with title <%s> and description <%s>",
-                event.title(),
-                event.description()
+                event.getTitle(),
+                event.getDescription()
             )
         );
     }
