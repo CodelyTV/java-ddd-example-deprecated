@@ -40,6 +40,8 @@ class MetaVideoManagementAdapterTest {
 
     }
 
+//    // TODO - Acabar de reviar como hacer le mock del HttpUrlConnection para poder probar el código, imposible llevar a cabo el TDD
+//    //
 //
 //    @Test
 //    @DisplayName("should return error connection when client not response")

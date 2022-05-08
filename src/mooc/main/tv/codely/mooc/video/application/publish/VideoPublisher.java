@@ -23,6 +23,7 @@ public final class VideoPublisher {
 
         eventBus.publish(video.pullDomainEvents());
 
+        // Publicar el vídeo sobre META, aunque no sea algo realmente funcional es para llevar a cabo el ejercicio
         videoManagementPort.publish(video);
     }
 }

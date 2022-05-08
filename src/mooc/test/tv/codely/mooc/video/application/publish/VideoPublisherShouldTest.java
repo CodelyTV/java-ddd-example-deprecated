@@ -10,7 +10,8 @@ import java.util.List;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-final class VideoPublisherShould {
+final class VideoPublisherShouldTest {
+
     @Test
     void publish_the_video_published_domain_event() {
         final EventBus eventBus = mock(EventBus.class);
