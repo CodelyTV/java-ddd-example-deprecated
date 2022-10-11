@@ -1,0 +1,16 @@
+name: "Issue Labeler"
+on:
+  pull_request:
+    types: [ opened, edited ]
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: github/issue-labeler@v2.5 #May not be the latest version
+        with:
+          repo-token: "${{ secrets.SUPPORT_TOKEN }}"
+          configuration-path: .github/labeler.yml
+
+
+

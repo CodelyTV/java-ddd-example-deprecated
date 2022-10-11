@@ -1,5 +1,6 @@
 package tv.codely.mooc.video.application.publish;
 
+import java.time.Instant;
 import tv.codely.mooc.video.domain.ServiceAPI;
 import tv.codely.mooc.video.domain.Video;
 import tv.codely.mooc.video.domain.VideoDescription;
