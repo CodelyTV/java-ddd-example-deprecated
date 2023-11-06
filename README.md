@@ -1,3 +1,5 @@
+> ⚠️ Deprecated project. Go to https://github.com/CodelyTV/java-ddd-example to see to the new one.
+
 # ☕🎯 Hexagonal Architecture + DDD + CQRS Java example with SpringBoot
 
 <img src="http://codely.tv/wp-content/uploads/2016/05/cropped-logo-codelyTV.png" align="left" width="192px" height="192px"/>
