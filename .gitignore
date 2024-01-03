@@ -6,3 +6,9 @@ out/
 # Ignore Gradle GUI config
 gradle-app.setting
 
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
