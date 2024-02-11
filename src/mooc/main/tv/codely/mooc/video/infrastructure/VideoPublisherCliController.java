@@ -1,6 +1,9 @@
 package tv.codely.mooc.video.infrastructure;
 
 import tv.codely.mooc.notification.application.create.SendPushToSubscribersOnVideoPublished;
+import tv.codely.mooc.twitter.application.SendNotificationTwitter;
+import tv.codely.mooc.twitter.domain.TwitterRepository;
+import tv.codely.mooc.twitter.infrastructure.Twitter;
 import tv.codely.mooc.video.application.publish.VideoPublisher;
 import tv.codely.shared.application.DomainEventSubscriber;
 import tv.codely.shared.domain.EventBus;
@@ -10,8 +13,11 @@ import java.util.Set;
 
 public class VideoPublisherCliController {
     public static void main(String[] args) {
+        final TwitterRepository twitter = new Twitter();
+
         final Set<DomainEventSubscriber> subscribers = Set.of(
-            new SendPushToSubscribersOnVideoPublished()
+                new SendPushToSubscribersOnVideoPublished(),
+                new SendNotificationTwitter(twitter)
         );
         final EventBus eventBus = new ReactorEventBus(subscribers);
         final var videoPublisher = new VideoPublisher(eventBus);
